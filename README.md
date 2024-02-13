@@ -6,4 +6,4 @@ Hey there, welcome to my public repository! Feel free to explore my work and lea
 </p>
 
 - **Demos:**
-  - [Link text](https://gabbb1e.github.io/sample-websites/demo/public/ "California Demo")
+  - [California Demo](https://gabbb1e.github.io/sample-websites/demo/public/ "California Demo")
