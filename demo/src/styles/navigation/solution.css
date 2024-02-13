@@ -1,0 +1,141 @@
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 75px;
+
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  max-height: fit-content;
+  width: 100%;
+
+  z-index: 5;
+
+  /* Initially hidden off-screen */
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+.dropdown.active {
+  /* Slide in when active */
+  transform: translateY(0);
+}
+/* Container */
+.dropdown .container {
+  padding: 1rem;
+  max-width: calc(1350px * 0.85);
+  display: flex;
+}
+/* Arrow Icon */
+.dropdown-icon,
+.collapse-icon {
+  animation: flipY-reverse-bounce 0.5s ease forwards;
+}
+.dropdown-icon.active,
+.collapse-icon.active {
+  animation: flipY-bounce 0.5s ease forwards;
+}
+/* Animations */
+@keyframes flipY-bounce {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(-1.1);
+  }
+  100% {
+    transform: scaleY(-1);
+  }
+}
+@keyframes flipY-reverse-bounce {
+  0% {
+    transform: scaleY(-1);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Solutions */
+.solution-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.details {
+  padding: 2rem 0;
+}
+.solution-grid {
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.solution-container article {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 1rem;
+}
+.solution-container article:hover .rounded {
+  background-color: rgb(0, 99, 255);
+}
+.solution-container article:hover .rounded img {
+  filter: invert(100%);
+}
+.rounded {
+  display: grid;
+
+  width: 75px;
+  height: 75px;
+
+  border-radius: 50%;
+
+  background-color: rgb(248, 249, 250);
+
+  transition: all 0.3s ease;
+}
+.rounded img {
+  align-self: center;
+  justify-self: center;
+}
+/* Editorial */
+.editorial {
+  width: calc(100% / 3);
+  padding: 1rem;
+}
+.editorial img {
+  border-radius: 25px 25px 0 0;
+}
+.editorial span {
+  display: block;
+  padding: 1rem;
+}
+
+/* Medium View */
+@media (max-width: 1040px) {
+  .dropdown .container {
+    max-height: 80svh;
+  }
+
+  .dropdown .container {
+    max-width: 768px;
+  }
+
+  .editorial {
+    display: none;
+  }
+}
+/* Mobile View */
+@media (max-width: 768px) {
+  .rounded {
+    width: 75px;
+    height: 75px;
+  }
+
+  .solution-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

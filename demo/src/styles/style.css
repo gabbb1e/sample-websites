@@ -1,0 +1,175 @@
+@import url("./navigation/navigation.css");
+@import url("./banner.css");
+@import url("./image.css");
+@import url("./footer.css");
+@import url("./sections/sections.css");
+
+:root {
+  --mobile-width: 900px;
+
+  /* Banner */
+  --first-slide-background: rgb(220, 229, 226);
+  --second-slide-background: rgb(204, 219, 226);
+  --third-slide-background: rgb(241, 241, 241);
+
+  /* Unit */
+  --spacing-unit: 1rem;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+
+  /* Font */
+  font-family: "Inter", sans-serif;
+
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0;
+
+  /* Remove style for list, hyperlink */
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* Body */
+body {
+  background-color: rgb(248, 249, 250);
+}
+body.pause-scroll {
+  overflow-y: hidden;
+}
+/* Fonts */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Readex Pro", sans-serif;
+}
+h1 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+h4 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+p {
+  font-weight: 400;
+}
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: fit-content;
+}
+
+/* Position */
+.center {
+  text-align: center;
+}
+.margin-top {
+  margin-top: 30px;
+}
+/* padding */
+.pt-space {
+  padding-top: 5rem;
+}
+.pb-space {
+  padding-bottom: 5rem;
+}
+
+.bottom {
+  bottom: 0;
+}
+.margin-right {
+  margin-right: auto;
+}
+.margin-left {
+  margin-left: auto;
+}
+
+/* Colors */
+.bg-white {
+  background-color: white;
+}
+.bg-color1 {
+  background-color: rgb(220, 229, 226);
+}
+a {
+  color: #000;
+}
+.default-font {
+  font-size: 1.5rem;
+}
+
+/* Explore buttons */
+.button {
+  border-radius: 25px;
+
+  padding: 0.5rem 2rem;
+  background-color: transparent;
+
+  border: #000 solid 1px;
+
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+.button:hover {
+  opacity: 0.6;
+}
+/* Card */
+.card {
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+/* Medium View */
+@media (max-width: 1040px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  .section-title p {
+    max-width: 80%;
+    margin: 10px auto 50px auto;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    width: 90svw;
+    margin: 0 auto;
+  }
+
+  .section-title p {
+    max-width: 100%;
+    margin: 1rem auto 2rem auto;
+  }
+
+  .pt-space {
+    padding-top: 2rem;
+  }
+  .pb-space {
+    padding-bottom: 2rem;
+  }
+}

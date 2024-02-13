@@ -1,0 +1,16 @@
+.logo {
+  min-height: 22px;
+  max-height: 22px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .logo {
+    min-width: 20px;
+  }
+}

@@ -1,0 +1,27 @@
+@import url("./section1.css");
+@import url("./section2.css");
+@import url("./section3.css");
+@import url("./section4.css");
+@import url("./section5.css");
+
+section {
+  padding: 2rem 0;
+}
+
+.section-title {
+  text-align: center;
+  height: fit-content;
+}
+
+.section-title p {
+  max-width: 50%;
+  margin: 10px auto 50px auto;
+}
+
+/* Medium View */
+@media (max-width: 1040px) {
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+}

@@ -1,0 +1,118 @@
+/* Hover Carousel */
+.section4-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: end;
+  justify-content: start;
+
+  /* gap: 1rem; */
+  text-align: left;
+  position: relative;
+
+  height: 400px;
+}
+/* .section4-container > * {
+  flex: 1;
+} */
+/* Items */
+/* Picture wrapper */
+.section4-container picture {
+  border-radius: 25px;
+  height: 400px;
+  width: 100%;
+
+  display: block; /* Ensure the picture element takes up the entire space of its parent */
+  overflow: hidden; /* Hide any overflowing content */
+
+  top: 0;
+  left: 0;
+
+  max-width: calc(50% - 1rem);
+  position: absolute;
+
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+/* Set non default */
+.section4-container picture:not(#hover-default) {
+  opacity: 0;
+  z-index: 2;
+}
+/* Images */
+.section4-container img {
+  height: 100%; /* Make the image fill the height of its parent */
+  width: 100%;
+  object-fit: cover; /* Ensure the image covers the entire space of the parent */
+  display: block;
+}
+/* Articles */
+.section4-container article {
+  width: calc(50% - 1rem);
+  padding: 1rem 0;
+  height: fit-content;
+  font-size: 1.5rem;
+
+  transition: padding-bottom 0.3s ease;
+}
+
+.section4-container article span {
+  background-color: rgb(248, 249, 250);
+
+  display: block;
+  z-index: 2;
+}
+
+.section4-container article:hover {
+  padding-bottom: 2rem;
+}
+.section4-container article::after {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  content: "Learn More...";
+
+  opacity: 0;
+  width: 100%;
+
+  left: 0;
+  bottom: 0;
+
+  border-bottom: 1px solid black;
+
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.section4-container article:hover::after {
+  opacity: 1;
+}
+/* Mobile View */
+@media (max-width: 768px) {
+  .section4-container {
+    text-align: left;
+    height: fit-content;
+  }
+
+  .section4-container picture:first-child {
+    display: none;
+  }
+
+  .section4-container picture:not(#hover-default) {
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  .section4-container article {
+    flex: 1;
+    width: 100%; /* Set width to 100% to fill the container */
+  }
+
+  .section4-container picture {
+    flex: 1;
+    opacity: 0.5;
+    position: relative;
+    display: block;
+    height: fit-content;
+    max-width: 100%;
+  }
+}

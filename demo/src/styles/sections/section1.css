@@ -1,0 +1,151 @@
+/* Container */
+.grid-container {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-areas:
+    "laptop laptop phone tablet"
+    "laptop laptop phone tablet"
+    "watch watch phone tablet";
+}
+/* Set grid area */
+.grid-container article:nth-child(1) {
+  grid-area: laptop;
+}
+.grid-container article:nth-child(2) {
+  grid-area: phone;
+}
+.grid-container article:nth-child(3) {
+  grid-area: tablet;
+}
+.grid-container article:nth-child(4) {
+  grid-area: watch;
+}
+/* Card */
+.grid-container article {
+  background-color: white;
+  overflow: hidden;
+
+  display: flex;
+  border-radius: 25px;
+  position: relative;
+
+  padding: 1.5rem;
+}
+/* Layouts */
+.grid-container .item2,
+.grid-container .item3 {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+.grid-container .item1,
+.grid-container .item2,
+.grid-container .item3 {
+  flex-direction: column;
+}
+/* First Element */
+.grid-container .item1 span {
+  text-align: right;
+  align-self: flex-end;
+}
+.grid-container .item1 picture {
+  display: flex;
+  max-height: 300px;
+}
+.grid-container .item1 img {
+  align-self: flex-end;
+  bottom: 0;
+  max-width: 450px;
+}
+/* Second Element */
+.grid-container .item2,
+.grid-container .item3 {
+  text-align: center;
+  display: flex;
+}
+.grid-container .item2 picture {
+  display: flex;
+  align-self: flex-start;
+  max-height: 350px;
+  left: 1rem;
+}
+.grid-container .item2 img {
+  max-width: 500px;
+}
+
+/* Third Element */
+.grid-container .item3 img {
+  max-width: 460px;
+}
+
+/* Fourth Element */
+.grid-container .item4 {
+  text-align: right;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+}
+.grid-container .item4 picture {
+  max-height: 230px;
+}
+.grid-container .item4 img {
+  max-width: 350px;
+}
+.grid-container .item4 span {
+  margin: auto 0;
+}
+
+/* Hover */
+.grid-container article {
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+.grid-container article:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile View */
+@media (max-width: 1040px) {
+  .grid-container .item2 picture {
+    align-self: center;
+  }
+
+  .grid-container {
+    grid-template-areas:
+      "laptop laptop "
+      "laptop laptop "
+      "phone tablet"
+      "phone tablet"
+      "phone tablet"
+      "watch watch";
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+      "laptop"
+      "laptop"
+      "phone"
+      "phone"
+      "phone"
+      "tablet"
+      "tablet"
+      "tablet"
+      "watch";
+  }
+
+  /* Third Element */
+  .grid-container .item3 img {
+    align-items: end;
+    right: -2.5rem;
+  }
+
+  .grid-container .item4 img {
+    max-width: 220px;
+  }
+}

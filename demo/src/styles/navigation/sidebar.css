@@ -1,0 +1,118 @@
+/* Sidebar */
+.sidebar {
+  position: fixed;
+
+  padding-top: 75px;
+
+  top: 0px;
+  right: 0px;
+
+  height: 100svh;
+  width: 100vw;
+
+  background-color: white;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.1);
+
+  z-index: 10;
+
+  /* Initially hidden off-screen */
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  font-weight: 600;
+
+  align-items: flex-start;
+
+  overflow-y: auto;
+}
+.sidebar.active {
+  transform: translateX(0);
+}
+/* Container */
+.sidebar .container {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  height: fit-content;
+}
+/* Items */
+.sidebar li a {
+  width: fit-content;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.sidebar li {
+  width: 100%;
+}
+/* Items hover */
+.sidebar li a::after {
+  width: 0;
+  height: 3px;
+
+  left: 50%;
+  bottom: -10px;
+
+  background-color: rgb(0, 0, 0);
+  content: "";
+
+  transition: all 0.35s ease 0s;
+  position: absolute;
+}
+.sidebar li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+/* Sidebar Controller */
+.sidebar-control {
+  display: none;
+  cursor: pointer;
+}
+.sidebar-control img {
+  animation: reverse-bounce 0.5s ease forwards;
+}
+.sidebar-control.active img {
+  /* Apply rotation when active (counter-clockwise) */
+  transform: rotate(-90deg); /* Changed from 90deg to -90deg */
+  animation: bounce 0.5s ease forwards; /* Apply bounce animation */
+}
+/* Animations */
+@keyframes bounce {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-100deg); /* Rotate slightly beyond -90deg */
+  }
+  100% {
+    transform: rotate(-90deg); /* Return to -90deg */
+  }
+}
+@keyframes reverse-bounce {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(10deg); /* Rotate slightly beyond -90deg */
+  }
+  100% {
+    transform: rotate(0deg); /* Return to 0deg */
+  }
+}
+
+/* Medium View */
+@media (max-width: 1040px) {
+}
+/* Mobile View */
+@media (max-width: 768px) {
+  /* Show sidebar menu */
+  .sidebar-control {
+    display: block;
+  }
+  /* Sidebar */
+  .sidebar {
+    width: 100%;
+  }
+}

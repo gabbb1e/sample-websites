@@ -1,0 +1,41 @@
+/* Collapse controller */
+#collapse-controller {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#collapse-controller.active {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-width: 100%;
+}
+/* Collapse container */
+.sidebar li.collapse-container {
+  display: none; /* Hidden initially */
+  max-height: 0px;
+
+  padding: 0;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+.sidebar li.collapse-container.active {
+  max-height: 500px;
+  padding: 1rem 0;
+}
+
+/* Medium View */
+@media (max-width: 1040px) {
+}
+/* Mobile View */
+@media (max-width: 768px) {
+  .solution-collapsible h3 {
+    font-size: 1rem;
+  }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+}

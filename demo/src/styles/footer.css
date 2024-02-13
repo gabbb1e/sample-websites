@@ -1,0 +1,68 @@
+/* Footer */
+footer {
+  width: 100svw;
+
+  display: grid;
+  grid-template-areas: "logo logo products company support socials";
+  grid-auto-columns: 1fr;
+
+  gap: 2rem;
+}
+/* Set grid areas */
+footer ul:nth-child(1) {
+  grid-area: logo;
+}
+footer ul:nth-child(2) {
+  grid-area: products;
+}
+footer ul:nth-child(3) {
+  grid-area: company;
+}
+footer ul:nth-child(4) {
+  grid-area: support;
+}
+footer ul:nth-child(5) {
+  grid-area: socials;
+}
+/* Items */
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+footer ul li {
+  cursor: pointer;
+}
+
+/* Title */
+footer ul .title {
+  font-weight: 600;
+}
+
+/* Medium View */
+@media (max-width: 1040px) {
+  footer {
+    grid-template-areas:
+      "logo logo"
+      "products company"
+      "support socials";
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  footer {
+    grid-template-areas:
+      "logo"
+      "products"
+      "company"
+      "support"
+      "socials";
+    grid-auto-columns: 1fr;
+
+    gap: 4rem;
+  }
+}
