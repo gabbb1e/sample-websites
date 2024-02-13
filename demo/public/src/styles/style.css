@@ -117,6 +117,7 @@ a {
 
   border: #000 solid 1px;
 
+  cursor: pointer;
   transition: all 0.3s ease;
   z-index: 3;
 }
